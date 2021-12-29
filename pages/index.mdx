@@ -22,7 +22,8 @@ export const getStaticProps = ({ params }) => {
 }
 
 
-export default ({ items }) => {
+export default () => {
+    const { items } = useSSG()
     return (
         <>
             {items.map((item) => (
