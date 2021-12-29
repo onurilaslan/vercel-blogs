@@ -1,6 +1,8 @@
 const YEAR = new Date().getFullYear()
 
 export default {
+  search: true,
+  darkMode: true,
   footer: (
     <small style={{ display: 'block', marginTop: '8rem' }}>
       <time>{YEAR}</time> © openduct.net.

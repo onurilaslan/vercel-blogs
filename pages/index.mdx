@@ -3,3 +3,32 @@ type: page
 title: Home
 date: 2021-03-19
 ---
+
+import { FEED, getFeed } from "../lib/rss";
+import Link from "next/link";
+
+export default ({  items }) => (
+    <>
+    {items.map((item) => (
+    <a
+        key={item.link}
+        href={item.link}
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        <div>{item.title}</div>
+    </a>
+    ))}
+    </>
+);
+
+export async function getStaticProps({ params }) {
+    const detailedFeed = await getFeed();
+
+    return {
+        props: {
+        items: detailedFeed.items,
+        },
+        revalidate: 1,
+    };
+}
