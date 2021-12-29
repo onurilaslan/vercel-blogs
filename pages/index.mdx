@@ -9,6 +9,7 @@ import Link from "next/link";
 
 
 export default () => {
+    let parser = new Parser();
     const items = parser.parseURL("https://blog.openduct.net/feed.xml").then((res) => res.items);
     return (
         <>
