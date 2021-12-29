@@ -1,5 +1,6 @@
 import Parser from "rss-parser";
 import Link from "next/link";
+import { format } from "date-fns";
 
 export const getStaticProps = async () => {
   let parser = new Parser();
@@ -13,7 +14,7 @@ export const getStaticProps = async () => {
 }
 
 const App = ({ items }) => {
-    return (<ul>{items.map((item) => (<li key={item.guid}><div>{item.creator}<p>{item.pubDate}</p></div><Link href={item.link} >{item.title}</Link><div>{item.contentSnippet}</div></li>))}</ul>)
+    return (<><h1>Openduct.net Blog</h1><br/><h2>Articles:</h2><dl>{items.map((item) => (<dd key={item.guid}><fieldset><legend><h3>{item.title}</h3></legend><div><strong>{item.contentSnippet}</strong></div><br /><h3><Link href={item.link} >#Read</Link></h3><h4>-{item.creator}</h4><p><i>{format(new Date(item.isoDate), "PPP")}</i></p></fieldset></dd>))}</dl></>)
 }
 
 export default App;
