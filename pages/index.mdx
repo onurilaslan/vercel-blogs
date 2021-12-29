@@ -8,31 +8,30 @@ import Parser from "rss-parser";
 import Link from "next/link";
 
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = ({ params }) => {
     let parser = new Parser();
-    let feed = await parser.parseURL("https://blog.openduct.net/feed.xml");
-    return {
+    return parser.parseURL("https://blog.openduct.net/feed.xml").then((res) => ({
         props: {
-        items: feed.items,
+            items: res.items,
         },
         revalidate: 1,
-    };
+    }))
 }
 
 
 export default ({ items }) => {
     return (
-    <>
-        {items.map((item) => (
-        <a
-            key={item.link}
-            href={item.link}
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <div>{item.title}</div>
-        </a>
-        ))}
+        <>
+            {items.map((item) => (
+            <a
+                key={item.link}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <div>{item.title}</div>
+            </a>
+            ))}
         </>
     )
 }
