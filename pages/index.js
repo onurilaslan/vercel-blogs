@@ -13,7 +13,7 @@ export const getStaticProps = async () => {
 }
 
 const App = ({ items }) => {
-    return (<>{items.map((item) => (<li key={item.guid}>{item.title}</li>))}</>)
+    return (<ul>{items.map((item) => (<li key={item.guid}><div>{item.creator}<p>{item.pubDate}</p></div><Link href={item.link} >{item.title}</Link><div>{item.contentSnippet}</div></li>))}</ul>)
 }
 
 export default App;
