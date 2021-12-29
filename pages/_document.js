@@ -8,10 +8,10 @@ class MyDocument extends Document {
 
   render() {
     const meta = {
-      title: 'Next.js Blog Starter Kit',
-      description: 'Clone and deploy your own Next.js portfolio in minutes.',
+      title: 'Openduct.net',
+      description: 'Openduct blog..',
       image:
-        'https://assets.vercel.com/image/upload/q_auto/front/vercel/dps.png'
+        'https://media.discordapp.net/attachments/647859250336628737/925800068664135711/wallhaven-y8k9ex.png?width=812&height=457'
     }
 
     return (
@@ -24,7 +24,7 @@ class MyDocument extends Document {
           <meta property="og:title" content={meta.title} />
           <meta property="og:image" content={meta.image} />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:site" content="@yourname" />
+          <meta name="twitter:site" content="llenax" />
           <meta name="twitter:title" content={meta.title} />
           <meta name="twitter:description" content={meta.description} />
           <meta name="twitter:image" content={meta.image} />
