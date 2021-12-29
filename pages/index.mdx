@@ -4,30 +4,32 @@ title: Home
 date: 2021-03-19
 ---
 
-import { FEED, getFeed } from "../lib/rss";
+import Parser from "rss-parser";
 import Link from "next/link";
 
-export default ({  items }) => (
+export default ({ items }) => {
+    return (
     <>
-    {items.map((item) => (
-    <a
-        key={item.link}
-        href={item.link}
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        <div>{item.title}</div>
-    </a>
-    ))}
-    </>
-);
+        {items.map((item) => (
+        <a
+            key={item.link}
+            href={item.link}
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <div>{item.title}</div>
+        </a>
+        ))}
+        </>
+    )
+}
 
 export async function getStaticProps({ params }) {
-    const detailedFeed = await getFeed();
-
+    let parser = new Parser();
+    let feed = await parser.parseURL("https://blog.openduct.net/feed.xml");
     return {
         props: {
-        items: detailedFeed.items,
+        items: feed.items,
         },
         revalidate: 1,
     };
