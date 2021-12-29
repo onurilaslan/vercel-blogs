@@ -7,6 +7,19 @@ date: 2021-03-19
 import Parser from "rss-parser";
 import Link from "next/link";
 
+
+export const getStaticProps = async ({ params }) => {
+    let parser = new Parser();
+    let feed = await parser.parseURL("https://blog.openduct.net/feed.xml");
+    return {
+        props: {
+        items: feed.items,
+        },
+        revalidate: 1,
+    };
+}
+
+
 export default ({ items }) => {
     return (
     <>
@@ -22,15 +35,4 @@ export default ({ items }) => {
         ))}
         </>
     )
-}
-
-export async function getStaticProps({ params }) {
-    let parser = new Parser();
-    let feed = await parser.parseURL("https://blog.openduct.net/feed.xml");
-    return {
-        props: {
-        items: feed.items,
-        },
-        revalidate: 1,
-    };
 }
