@@ -1,9 +1,3 @@
----
-type: page
-title: Home
-date: 2021-03-19
----
-
 import Parser from "rss-parser";
 import Link from "next/link";
 
@@ -18,6 +12,8 @@ export const getStaticProps = async () => {
   }
 }
 
-export default ({ items }) => {
+const App = ({ items }) => {
     return (<>{items.map((item) => (<li key={item.guid}>{item.title}</li>))}</>)
 }
+
+export default App;
