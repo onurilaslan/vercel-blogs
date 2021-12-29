@@ -4,26 +4,12 @@ title: Home
 date: 2021-03-19
 ---
 
-import { useSSG } from 'nextra/ssg'
 import Parser from "rss-parser";
 import Link from "next/link";
 
 
-export const getStaticProps = ({ params }) => {
-    let parser = new Parser();
-    return parser.parseURL("https://blog.openduct.net/feed.xml").then((res) => ({
-        props: {
-            ssg: {
-                items: res.items,
-            }
-        },
-        revalidate: 1,
-    }))
-}
-
-
 export default () => {
-    const { items } = useSSG()
+    const items = parser.parseURL("https://blog.openduct.net/feed.xml").then((res) => res.items);
     return (
         <>
             {items.map((item) => (
