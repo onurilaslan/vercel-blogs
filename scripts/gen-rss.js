@@ -27,7 +27,9 @@ async function generate() {
         date: frontmatter.data.date,
         description: frontmatter.data.description,
         author: frontmatter.data.author,
-        media: frontmatter.data.media
+        custom_elements: [
+          {'media': frontmatter.data.media}
+        ]
       })
     })
   )
