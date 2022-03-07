@@ -14,6 +14,7 @@ export const getStaticProps = async () => {
 }
 
 const App = ({ items }) => {
+    console.log(items)
   var pinned = items.filter((item) => item.title == 'ann');
   return (
     <>
