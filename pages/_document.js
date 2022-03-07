@@ -8,10 +8,10 @@ class MyDocument extends Document {
 
   render() {
     const meta = {
-      title: 'Openduct.net',
-      description: 'Openduct blog..',
+      title: 'BLOG',
+      description: 'BLOG',
       image:
-        'https://media.discordapp.net/attachments/647859250336628737/925800068664135711/wallhaven-y8k9ex.png?width=812&height=457'
+        ''
     }
 
     return (

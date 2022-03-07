@@ -9,15 +9,15 @@
     "start": "next start"
   },
   "dependencies": {
+    "date-fns": "^2.28.0",
     "gray-matter": "^4.0.2",
-    "next": "latest",
+    "next": "^12.1.0",
     "nextra": "^1.1.0",
     "nextra-theme-blog": "^0.1.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "rss": "^1.2.2",
-    "rss-parser": "^3.12.0",
-    "date-fns": "^2.28.0"
+    "rss-parser": "^3.12.0"
   },
   "prettier": {
     "arrowParens": "always",
@@ -25,5 +25,10 @@
     "tabWidth": 2,
     "trailingComma": "none",
     "semi": false
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.8",
+    "tailwindcss": "^3.0.23"
   }
 }
