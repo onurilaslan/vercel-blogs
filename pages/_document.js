@@ -11,7 +11,7 @@ class MyDocument extends Document {
       title: 'BLOG',
       description: 'BLOG',
       image:
-        ''
+        'https://media.discordapp.net/attachments/647859250336628737/950500499294130236/unknown_1.png'
     }
 
     return (
