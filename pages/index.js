@@ -32,17 +32,19 @@ const App = ({ items }) => {
                     <div className=''>
                         <div className='flex lg:space-x-12 lg:my-6 px-4'>
                             <div className='flex flex-col w-full lg:w-2/3 min-h-[320px] md:min-h-[400px] sm:min-h-full lg:min-h-full self-center'>
-                                <div className='bg-white flex flex-col shadow-md'>
-                                    <div className='bg-slate-900 min-h-[120px] md:min-h-[200px] relative'>
-                                        <img className='absolute inset-0 object-cover h-full w-full' src='https://picsum.photos/800/400?random=4' />
-                                    </div>
-                                    <div className=''>
-                                        <h1 className='p-2 text-[1.3rem] md:text-[1.6rem] w-full'>{items[0].title}</h1>
-                                        <div className='flex'>
-                                            <p className='p-2 text-[.75rem] md:text-[1.1rem]'>{items[0].contentSnippet}</p>
+                                <a href={items[0].guid}>
+                                    <div className='bg-white flex flex-col shadow-md'>
+                                        <div className='bg-slate-900 min-h-[120px] md:min-h-[200px] relative'>
+                                            <img className='absolute inset-0 object-cover h-full w-full' src='https://picsum.photos/800/400?random=4' />
+                                        </div>
+                                        <div className=''>
+                                            <h1 className='p-2 text-[1.3rem] md:text-[1.6rem] w-full'>{items[0].title}</h1>
+                                            <div className='flex'>
+                                                <p className='p-2 text-[.75rem] md:text-[1.1rem]'>{items[0].contentSnippet}</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                             <div className='hidden lg:flex w-1/3'>
                                 <div className='w-full h-full flex flex-col'>
@@ -50,13 +52,15 @@ const App = ({ items }) => {
                                         {items.length >= 3 && items.map((item, i) => {
                                                 if(i <= 3) {
                                                     return (
-                                                        <div className='bg-white flex relative shadow-md items-center rounded-md'>
-                                                            <img className='object-cover w-[115px] h-[115px] rounded-l-md' src='https://picsum.photos/400/300?random=4' />
-                                                            <div className='p-2 flex flex-col'>
-                                                                <span className='font-light'>Category</span>
-                                                                <div className='font-semibold text-[1rem] text-slate-900'>item.title</div>
+                                                        <a href={item.guid}>
+                                                            <div className='bg-white flex relative shadow-md items-center rounded-md'>
+                                                                <img className='object-cover w-[115px] h-[115px] rounded-l-md' src='https://picsum.photos/400/300?random=4' />
+                                                                <div className='p-2 flex flex-col'>
+                                                                    <span className='font-light'>Category</span>
+                                                                    <div className='font-semibold text-[1rem] text-slate-900'>{item.title}</div>
+                                                                </div>
                                                             </div>
-                                                        </div>
+                                                        </a>
                                                     )
                                                 }
                                             }
@@ -72,17 +76,19 @@ const App = ({ items }) => {
                             {items.map((item, i) => {
                                 if(i != 0) {
                                     return (
-                                        <div className='bg-white shadow-lg min-h-[320px] md:min-h-[550px] flex flex-col m-4'>
-                                            <div className='bg-slate-900 min-h-[120px] md:min-h-[200px] relative'>
-                                                <img className='absolute inset-0 object-cover h-full w-full' src='https://picsum.photos/400/300?random=4' />
-                                            </div>
-                                            <div className=''>
-                                                <h1 className='text-[1.3rem] md:text-[1.6rem] px-4 py-2'>{item.title}</h1>
-                                                <div className='flex'>
-                                                    <p className='p-4 text-[.75rem] md:text-[1.1rem] '>{item.contentSnippet}</p>
+                                        <a href={item.guid}>
+                                            <div className='bg-white shadow-lg min-h-[320px] md:min-h-[550px] flex flex-col m-4'>
+                                                <div className='bg-slate-900 min-h-[120px] md:min-h-[200px] relative'>
+                                                    <img className='absolute inset-0 object-cover h-full w-full' src='https://picsum.photos/400/300?random=4' />
+                                                </div>
+                                                <div className=''>
+                                                    <h1 className='text-[1.3rem] md:text-[1.6rem] px-4 py-2'>{item.title}</h1>
+                                                    <div className='flex'>
+                                                        <p className='p-4 text-[.75rem] md:text-[1.1rem] '>{item.contentSnippet}</p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </a>
                                     );
                                 }
                             })}
