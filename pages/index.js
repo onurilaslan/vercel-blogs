@@ -4,6 +4,7 @@ import { format } from 'date-fns'
 export const getStaticProps = async () => {
   let parser = new Parser()
   let feed = await parser.parseURL('https://blog.onurilaslan.com/feed.xml')
+  console.log(feed)
   return {
     props: {
       items: feed.items
@@ -13,7 +14,6 @@ export const getStaticProps = async () => {
 }
 
 const App = ({ items }) => {
-    console.log(items)
   var pinned = items.filter((item) => item.title == 'ann');
   return (
     <>
