@@ -26,7 +26,8 @@ async function generate() {
         url: '/articles/' + name.replace(/\.mdx?/, ''),
         date: frontmatter.data.date,
         description: frontmatter.data.description,
-        author: frontmatter.data.author
+        author: frontmatter.data.author,
+        media: frontmatter.data.media
       })
     })
   )
