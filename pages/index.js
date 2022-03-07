@@ -14,7 +14,6 @@ export const getStaticProps = async () => {
 }
 
 const App = ({ items }) => {
-    console.log(items)
   var pinned = items.filter((item) => item.title == 'DUYURU');
   return (
     <>
@@ -95,7 +94,7 @@ const App = ({ items }) => {
                                         <a href={item.guid}>
                                             <div className='bg-white shadow-lg min-h-[320px] md:min-h-[550px] flex flex-col m-4'>
                                                 <div className='bg-slate-900 min-h-[120px] md:min-h-[200px] relative'>
-                                                    <img className='absolute inset-0 object-cover h-full w-full' src='https://picsum.photos/400/300?random=4' />
+                                                    <img className='absolute inset-0 object-cover h-full w-full' src={item.enclosure.url} />
                                                 </div>
                                                 <div className=''>
                                                     <h1 className='text-[1.3rem] md:text-[1.6rem] px-4 py-2'>{item.title}</h1>
