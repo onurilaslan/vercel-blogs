@@ -13,6 +13,7 @@ export const getStaticProps = async () => {
 }
 
 const App = ({ items }) => {
+  var pinned = items.filter((item) => item.title == 'ann');
   return (
     <>
         {items.length > 0 ?
@@ -48,16 +49,18 @@ const App = ({ items }) => {
                             </div>
                             <div className='hidden lg:flex w-1/3'>
                                 <div className='w-full h-full flex flex-col space-y-6'>
-                                    <a href={items[0].guid}>
-                                        <div className='bg-white flex relative shadow-md items-center rounded-md'>
-                                            <img className='object-cover w-[115px] h-[115px] rounded-l-md' src='https://picsum.photos/400/300?random=4' />
-                                            <div className='p-2 flex flex-col w-full'>
-                                                <h4 className='font-light text-slate-600'>Pinned</h4>
-                                                <span className='font-light'>Category</span>
-                                                <div className='font-semibold text-[1rem] text-slate-900'>{items[0].title}</div>
+                                    {pinned.length > 0 && (
+                                        <a href={pinned[0].guid}>
+                                            <div className='bg-white flex relative shadow-md items-center rounded-md'>
+                                                <img className='object-cover w-[115px] h-[115px] rounded-l-md' src='https://picsum.photos/400/300?random=4' />
+                                                <div className='p-2 flex flex-col w-full'>
+                                                    <h4 className='font-light text-slate-600'>Pinned</h4>
+                                                    <span className='font-light'>Category</span>
+                                                    <div className='font-semibold text-[1rem] text-slate-900'>{pinned[0].title}</div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </a>
+                                        </a>
+                                    )}
                                     <div className='border-b border-slate-300'></div>
                                     <div className='w-full h-full grid grid-cols-1 grid-rows-3 gap-5'>
                                         {items.length >= 2 && items.map((item, i) => {
