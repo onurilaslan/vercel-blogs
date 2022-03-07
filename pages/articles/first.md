@@ -3,6 +3,7 @@ title: first
 date: 2021/03/07
 description: first
 author: llenax
+media: https://i.picsum.photos/id/187/800/400.jpg?hmac=XZBF_BYpfbrMwdGSGJn4MD25rQhSWjc5ugeVJs5ezxM
 ---
 
 # Markdown Blog
