@@ -38,7 +38,7 @@ const App = ({ items }) => {
                                 <a href={items[0].guid}>
                                     <div className='bg-white flex flex-col shadow-md'>
                                         <div className='bg-slate-900 min-h-[120px] md:min-h-[200px] relative'>
-                                            <img className='absolute inset-0 object-cover h-full w-full' src='https://picsum.photos/800/400?random=4' />
+                                            <img className='absolute inset-0 object-cover h-full w-full' src={items[0].enclosure.url} />
                                         </div>
                                         <div className=''>
                                             <h1 className='p-2 text-[1.3rem] md:text-[1.6rem] w-full'>{items[0].title}</h1>
@@ -54,7 +54,7 @@ const App = ({ items }) => {
                                     {pinned.length > 0 && (
                                         <a href={pinned[0].guid}>
                                             <div className='bg-white flex relative shadow-md items-center rounded-md'>
-                                                <img className='object-cover w-[115px] h-[115px] rounded-l-md' src='https://picsum.photos/400/300?random=4' />
+                                                <img className='object-cover w-[115px] h-[115px] rounded-l-md' src={pinned[0].enclosure.url} />
                                                 <div className='p-2 flex flex-col w-full'>
                                                     <h4 className='font-light text-slate-600'>Pinned</h4>
                                                     <span className='font-light'>Category</span>
@@ -70,7 +70,7 @@ const App = ({ items }) => {
                                                     return (
                                                         <a href={item.guid}>
                                                             <div className='bg-white flex relative shadow-md items-center rounded-md'>
-                                                                <img className='object-cover w-[115px] h-[115px] rounded-l-md' src='https://picsum.photos/400/300?random=4' />
+                                                                <img className='object-cover w-[115px] h-[115px] rounded-l-md' src={item.enclosure.url} />
                                                                 <div className='p-2 flex flex-col w-full'>
                                                                     <span className='font-light'>Category</span>
                                                                     <div className='font-semibold text-[1rem] text-slate-900'>{item.title}</div>
