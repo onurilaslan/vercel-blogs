@@ -3,8 +3,7 @@ import { format } from 'date-fns'
 
 export const getStaticProps = async () => {
   let parser = new Parser()
-  let feed = await parser.parseURL('https://blog.onurilaslan.com/feed.xml')
-  console.log(feed)
+  let feed = await parser.parseURL('https://www.onurilaslan.com/feed.xml')
   return {
     props: {
       items: feed.items
