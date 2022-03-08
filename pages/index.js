@@ -14,110 +14,106 @@ export const getStaticProps = async () => {
 }
 
 const App = ({ items }) => {
-  var pinned = items.filter((item) => item.title == 'DUYURU');
-  return (
-    <>
-        {items.length > 0 ?
-            <div>
-                <div className='flex items-center justify-between w-full bg-white pt-2 p-3 sticky top-0 z-20'>
-                    <h4 className='text-slate-800 text-[2rem] font-medium'>Onurİlaslan</h4>
-                    <div className='block lg:hidden'>
-                        <svg className='w-4' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
-                    </div>
-                    <div className='hidden lg:flex'>
-                        <ul className='list-none'>
-                            <li><a href='#' className='text-slate-600 p-3 text-[1.2rem] before:border-2 before:mr-2 before:border-slate-700'>About</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div className='max-w-[1080px] mx-auto w-full h-full flex flex-col'>
-                    <div className=''>
-                        <div className='flex lg:space-x-12 lg:my-6 px-4'>
-                            <div className='flex flex-col w-full lg:w-2/3 min-h-[320px] md:min-h-[400px] sm:min-h-full lg:min-h-full self-center'>
-                                <a href={items[0].guid}>
-                                    <div className='bg-white flex flex-col shadow-md'>
-                                        <div className='bg-slate-900 min-h-[120px] md:min-h-[200px] relative'>
-                                            <img className='absolute inset-0 object-cover h-full w-full' src={items[0].enclosure.url} />
-                                        </div>
-                                        <div className=''>
-                                            <h1 className='p-2 text-[1.3rem] md:text-[1.6rem] w-full'>{items[0].title}</h1>
-                                            <div className='flex'>
-                                                <p className='p-2 text-[.75rem] md:text-[1.1rem]'>{items[0].contentSnippet}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div className='hidden lg:flex w-1/3'>
-                                <div className='w-full h-full flex flex-col space-y-6'>
-                                    {pinned.length > 0 && (
-                                        <a href={pinned[0].guid}>
-                                            <div className='bg-white flex relative shadow-md items-center rounded-md'>
-                                                <img className='object-cover w-[115px] h-[115px] rounded-l-md' src={pinned[0].enclosure.url} />
-                                                <div className='p-2 flex flex-col w-full'>
-                                                    <h4 className='font-light text-slate-600'>Pinned</h4>
-                                                    <span className='font-light'>Category</span>
-                                                    <div className='font-semibold text-[1rem] text-slate-900'>{pinned[0].title}</div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    )}
-                                    <div className='border-b border-slate-300'></div>
-                                    <div className='w-full h-full grid grid-cols-1 grid-rows-3 gap-5'>
-                                        {items.length >= 2 && items.map((item, i) => {
-                                                if(i < 2) {
-                                                    return (
-                                                        <a href={item.guid}>
-                                                            <div className='bg-white flex relative shadow-md items-center rounded-md'>
-                                                                <img className='object-cover w-[115px] h-[115px] rounded-l-md' src={item.enclosure.url} />
-                                                                <div className='p-2 flex flex-col w-full'>
-                                                                    <span className='font-light'>Category</span>
-                                                                    <div className='font-semibold text-[1rem] text-slate-900'>{item.title}</div>
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                    )
-                                                }
-                                            }
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div className=''>
-                        <div className='grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12'>
-                            {items.map((item, i) => {
-                                if(i != 0) {
-                                    return (
-                                        <a href={item.guid}>
-                                            <div className='bg-white shadow-lg min-h-[320px] md:min-h-[550px] flex flex-col m-4'>
-                                                <div className='bg-slate-900 min-h-[120px] md:min-h-[200px] relative'>
-                                                    <img className='absolute inset-0 object-cover h-full w-full' src={item.enclosure.url} />
-                                                </div>
-                                                <div className=''>
-                                                    <h1 className='text-[1.3rem] md:text-[1.6rem] px-4 py-2'>{item.title}</h1>
-                                                    <div className='flex'>
-                                                        <p className='p-4 text-[.75rem] md:text-[1.1rem] '>{item.contentSnippet}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    );
-                                }
-                            })}
-                        </div>
-                    </div>
+  return (<>
+    <div className="w-full bg-white dark:bg-slate-900 border-b dark:border-slate-500/50">
+        <div className="max-w-[1080px] mx-auto py-4 dark:text-slate-200 flex items-center justify-between">
+            <h1 className="text-3xl font-black select-none dark:text-slate-300 cursor-pointer">Onurİlaslan</h1>
+            <div className="flex items-center space-x-10">
+                <ul className="flex space-x-6">
+                    <li className="text-md font-semibold select-none"><a href="#" className="dark:text-slate-300 p-1 px-2">Hakkımda</a></li>
+                    <li className="text-md font-semibold select-none"><a href="#" className="dark:text-slate-300 p-1 px-2">Blog</a></li>
+                </ul>
+                <div className="dark:fill-white select-none dark:bg-slate-800/50 p-2 rounded-md">
+                    <svg id="darkmode" className="w-5 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
                 </div>
             </div>
-         : (<></>)}
-        {/* {items.map((item) => (
-            // [guid, title, contentSnippet, link, creator, format(new Date(item.isoDate), 'PPP')]
-            <></>
-        ))} */}
-    </>
-  )
+        </div>
+    </div>
+    <div className="max-w-[1080px] mx-auto">
+        <div className="p-4 px-8 grid grid-cols-1 sm:grid-cols-2 grid-rows-1 gap-4">
+            {items.length > 0 ?             
+                <div className="wrapper dark:bg-slate-900 antialiased dark:text-gray-900">
+                    <img data-src={items[0].enclosure.url} className="lazy w-full object-cover object-center rounded-lg shadow-md" />
+                    <div className="relative px-4 -mt-16 transition duration-150 ease-out hover:scale-110 select-none cursor-pointer">
+                        <a href={items[0].guid}>
+                            <div className="dark:bg-slate-800 dark:text-slate-300 bg-white p-6 rounded-lg shadow-lg">
+                                <div className="flex items-baseline">
+                                    <span className="bg-slate-200 dark:text-slate-800 text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide">
+                                        Category
+                                    </span>
+                                </div>
+                                <h4 className="mt-1 text-xl font-bold uppercase leading-tight truncate">{items[0].title}</h4>
+                                <div className="mt-1 font-semibold">
+                                    {items[0].contentSnippet}
+                                </div>
+                                <div className="mt-4">
+                                    <span className="text-slate-400 text-md font-semibold">2 Dakika okuma süresi</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            : <></>}
+            <div>
+                <div className="grid grid-cols-1 grid-rows-3 gap-2">
+                    {items.map((item, index) => {
+                        if(index < 3) {
+                            return (
+                                <div className="wrapper dark:bg-slate-900 antialiased dark:text-gray-900">
+                                    <div className="relative px-4 transition duration-150 ease-out hover:scale-110 select-none cursor-pointer">
+                                        <a href={item.guid}>
+                                            <div className="dark:bg-slate-800 dark:text-slate-300 bg-white p-6 rounded-lg shadow-lg">
+                                                <div className="flex items-baseline">
+                                                    <span className="bg-slate-200 dark:text-slate-800 text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide">
+                                                        Category
+                                                    </span>
+                                                </div>
+                                                <h4 className="mt-1 text-xl font-bold uppercase leading-tight truncate">{item.title}</h4>
+                                                <div className="mt-1 font-semibold">
+                                                    {item.contentSnippet}
+                                                </div>
+                                                <div className="mt-4">
+                                                    <span className="text-slate-400 text-md font-semibold">2 Dakika okuma süresi</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            )
+                        }
+                    })}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div className="max-w-[1080px] mx-auto">
+        <div className="p-4 px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            {items.length > 0 && items.map((item) => (
+                <div key={item.guid} className="wrapper dark:bg-slate-900 antialiased dark:text-gray-900">
+                    <img data-src={item.enclosure.url} className="lazy w-full object-cover object-center rounded-lg shadow-md" />
+                    <div className="relative px-4 -mt-16 transition duration-150 ease-out hover:scale-110 select-none cursor-pointer">
+                        <a href={item.guid}>
+                            <div className="dark:bg-slate-800 dark:text-slate-300 bg-white p-6 rounded-lg shadow-lg">
+                                <div className="flex items-baseline">
+                                    <span className="bg-slate-200 dark:text-slate-800 text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide">
+                                        Category
+                                    </span>
+                                </div>
+                                <h4 className="mt-1 text-xl font-bold uppercase leading-tight truncate">{item.title}</h4>
+                                <div className="mt-1 font-semibold">
+                                    {item.contentSnippet}
+                                </div>
+                                <div className="mt-4">
+                                    <span className="text-slate-400 text-md font-semibold">2 Dakika okuma süresi</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+  </>)
 }
 
 export default App
