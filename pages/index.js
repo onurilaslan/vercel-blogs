@@ -1,6 +1,7 @@
 import Parser from 'rss-parser'
 import Header from '../components/Header'
 import { format } from 'date-fns'
+import readTimeEstimate from 'read-time-estimate'
 
 export const getStaticProps = async () => {
   let parser = new Parser()
@@ -34,7 +35,7 @@ const App = ({ items }) => {
                                     {items[0].contentSnippet}
                                 </div>
                                 <div className="mt-4">
-                                    <span className="text-slate-400 text-md font-semibold">2 Dakika okuma süresi</span>
+                                    <span className="text-slate-400 text-md font-semibold">{items[0].custom_items?.read_time}</span>
                                 </div>
                             </div>
                         </a>
