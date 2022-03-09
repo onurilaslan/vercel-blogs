@@ -22,6 +22,8 @@ async function generate() {
       )
       const frontmatter = matter(content)
 
+      const { duration } = readTimeEstimate(frontmatter.content, 275, 12, 500, ['img', 'Image']);
+
       feed.item({
         title: frontmatter.data.title,
         url: '/articles/' + name.replace(/\.mdx?/, ''),
@@ -30,7 +32,7 @@ async function generate() {
         author: frontmatter.data.author,
         enclosure: {'url': frontmatter.data.media},
         custom_elements: [
-          { 'read_time': readTimeEstimate(frontmatter.content, 275, 12, 500, ['img', 'Image']).duration },
+          { 'read_time': duration },
         ]
       })
     })
