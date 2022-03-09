@@ -1,7 +1,6 @@
 import Parser from 'rss-parser'
 import Header from '../components/Header'
 import { format } from 'date-fns'
-import readTimeEstimate from 'read-time-estimate'
 
 export const getStaticProps = async () => {
   let parser = new Parser()
