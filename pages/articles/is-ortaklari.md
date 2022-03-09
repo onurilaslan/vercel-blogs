@@ -8,5 +8,3 @@ timestamp: 1
 ---
 
 # is-ortaklari
-
-openduct.net
