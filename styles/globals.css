@@ -11,6 +11,7 @@
 
 html.dark body {
   background-color: rgb(17 24 39);
+  min-height: 100vh;
 }
 
 ::-webkit-scrollbar {

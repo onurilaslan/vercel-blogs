@@ -13,31 +13,37 @@ const Post = ({ posts, content, data }) => {
   }, []);
   return (<>
         <Header />
-        <div className='flex'>
-          <div className="grid grid-cols-1 mx-auto">
+        <div className='flex min-h-screen'>
+          <div className="flex flex-col mx-auto">
             <div className="dark:fill-slate-300 pt-4 pb-2">
               <svg id='returnToHome' className="w-12 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M512 256C512 273.7 497.7 288 480 288H160.1l0 72c0 9.547-5.66 18.19-14.42 22c-8.754 3.812-18.95 2.077-25.94-4.407l-112.1-104c-10.24-9.5-10.24-25.69 0-35.19l112.1-104c6.992-6.484 17.18-8.218 25.94-4.406C154.4 133.8 160.1 142.5 160.1 151.1L160.1 224H480C497.7 224 512 238.3 512 256z"/></svg>
             </div>
-            <div className='w-[880px] max-w-[880px] mx-auto my-6 dark:text-slate-300 space-y-6 dark:bg-slate-800 rounded-md'>
-              <div className="p-2 px-4 shadow-xl">
-                <div className="py-4 flex items-center space-x-4">
-                  <img className="lazy w-16 h-16 object-cover border-2 dark:border-slate-300 rounded-full" data-src="https://media.discordapp.net/attachments/647859250336628737/950500499294130236/unknown_1.png"/>
-                  <div className="flex flex-col items-start">
-                    <h4 className="text-xl">{data.author}</h4>
-                    <span className="text-xs dark:text-slate-300/75 font-bold">{data.date} · </span>
+            <div className="grid grid-cols-1">
+              <div className="flex">
+                <div className='sm:w-[500px] md:w-[700px] xl:w-[880px] my-6 dark:text-slate-300 space-y-6 dark:bg-slate-800 rounded-md'>
+                  <div className="p-2 px-4 shadow-xl">
+                    <div className="py-4 flex items-center space-x-4">
+                      <img className="lazy w-16 h-16 object-cover border-2 dark:border-slate-300 rounded-full" data-src="https://media.discordapp.net/attachments/647859250336628737/950500499294130236/unknown_1.png"/>
+                      <div className="flex flex-col items-start">
+                        <h4 className="text-xl">{data.author}</h4>
+                        <span className="text-xs dark:text-slate-300/75 font-bold">{data.date} · </span>
+                      </div>
+                    </div>
+                    <h1 className='text-2xl font-bold'>{data.title}</h1>
+                    <h3 className='text-xl dark:text-slate-400'>{data.description}</h3>
+                    <div className='flex flex-col py-4'>
+                      <img data-src={data.media} className="lazy w-full object-cover object-top rounded-lg shadow-md max-h-[350px]" />
+                      <small><a href={data.media}>Open original</a></small>
+                    </div>
+                    <div className="grid grid-cols-1">
+                      <div className="prose" dangerouslySetInnerHTML={{__html: content}} />
+                    </div>
                   </div>
                 </div>
-                <h1 className='text-2xl font-bold'>{data.title}</h1>
-                <h3 className='text-xl dark:text-slate-400'>{data.description}</h3>
-                <div className='py-4'>
-                  <img data-src={data.media} className="lazy w-full object-cover object-top rounded-lg shadow-md max-h-[350px]" />
-                  <small><a href={data.media}>Open original</a></small>
-                </div>
-                <div className="prose" dangerouslySetInnerHTML={{__html: content}} />
               </div>
             </div>
           </div>
-          <div className='hidden md:block w-[400px] max-w-[400px] mx-auto'>
+          <div className='hidden xl:block w-[400px] max-w-[400px] mx-auto'>
             <div className="grid justify-center space-y-4 p-6 grid-cols-1">
               {posts.map((post, index) => {
                 if(index < 5) {

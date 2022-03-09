@@ -14,7 +14,6 @@ module.exports = {
           h4: { fontSize: '1.125rem' },
           h5: { fontSize: '1rem' },
           h6: { fontSize: '0.875rem' },
-          code: { padding: '1rem' }
         },
       },
     },

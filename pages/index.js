@@ -47,7 +47,7 @@ const App = ({ posts }) => {
                     </div>
                 : <></>}
                 <div>
-                    <div className="grid grid-cols-1 grid-rows-3 gap-2">
+                    <div className="hidden sm:grid grid-cols-1 grid-rows-3 gap-2">
                         {posts.map((item, index) => {
                             if(index < 4 && index >= 1) {
                                 return (
