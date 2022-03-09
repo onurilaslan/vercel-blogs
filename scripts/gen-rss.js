@@ -2,7 +2,7 @@ const { promises: fs } = require('fs')
 const path = require('path')
 const RSS = require('rss')
 const matter = require('gray-matter')
-const readTimeEstimate = require('read-time-estimate');
+const readTimeEstimate = require('./readTime')
 
 async function generate() {
   const feed = new RSS({
