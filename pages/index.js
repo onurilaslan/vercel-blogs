@@ -3,16 +3,21 @@ import * as fs from "fs";
 import path from "path";
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import { content } from "../tailwind.config";
 // import { format } from 'date-fns'
 
 
 export async function getStaticProps() {
     const posts = fs.readdirSync(path.join('pages', 'articles'))
-        .map(md => ( { link: '/'+md.replace('.md', ''), ...matter(fs.readFileSync(path.join('pages', 'articles', md)), 'utf-8').data } ))
+        .map(md => ( { 
+            link: '/'+md.replace('.md', ''), 
+            content: matter(fs.readFileSync(path.join('pages', 'articles', md)), 'utf-8').content, 
+            ...matter(fs.readFileSync(path.join('pages', 'articles', md)), 'utf-8').data 
+        } ))
         .filter((post) => 'timestamp' in post === true)
         .sort((a, b) => {
         return b.timestamp - a.timestamp;
-        }); 
+    });
     return {
         props: { posts }
     }
@@ -65,7 +70,7 @@ const App = ({ posts }) => {
                                                         {item.description}
                                                     </div>
                                                     <div className="mt-4">
-                                                        <span className="text-slate-400 text-md font-semibold">2 Dakika okuma süresi</span>
+                                                        <span className="text-slate-400 text-md font-semibold">{Math.ceil(item.content.split(/\s+/g).length/225)} min read</span>
                                                     </div>
                                                 </div>
                                             </a>
@@ -98,7 +103,7 @@ const App = ({ posts }) => {
                                                 {item.description}
                                             </div>
                                             <div className="mt-4">
-                                                <span className="text-slate-400 text-md font-semibold">2 Dakika okuma süresi</span>
+                                                <span className="text-slate-400 text-md font-semibold">{Math.ceil(item.content.split(/\s+/g).length/225)} min read</span>
                                             </div>
                                         </div>
                                     </a>
