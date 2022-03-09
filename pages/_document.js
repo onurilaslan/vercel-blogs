@@ -8,10 +8,10 @@ class MyDocument extends Document {
 
   render() {
     const meta = {
-      title: 'BLOG',
-      description: 'BLOG',
+      title: 'Onurİlaslan',
+      description: '',
       image:
-        'https://media.discordapp.net/attachments/647859250336628737/950500499294130236/unknown_1.png'
+        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.H2WZiC1JiXCT9qW0YwlaxwAAAA%26pid%3DApi&f=1'
     }
 
     return (
@@ -28,6 +28,7 @@ class MyDocument extends Document {
           <meta name="twitter:title" content={meta.title} />
           <meta name="twitter:description" content={meta.description} />
           <meta name="twitter:image" content={meta.image} />
+          <link rel="shortcut icon" href="/favicon.ico" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
           <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet" />
@@ -38,7 +39,7 @@ class MyDocument extends Document {
           <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
           <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
           <script src="./js/script.js"></script>
-
+          <title>{meta.title}</title>
         </Head>
         <body>
           <Main />

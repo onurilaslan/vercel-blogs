@@ -7,6 +7,9 @@ if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.match
 $(function() {
     $('.lazy').Lazy();
 
+    $('#returnToHome').click(() => {
+      window.location.href = '/';
+    })
     
     $('#darkmode').click(() => {
         if(localStorage.theme == 'light') {

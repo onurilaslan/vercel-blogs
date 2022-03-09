@@ -2,6 +2,7 @@ import matter from "gray-matter";
 import * as fs from "fs";
 import path from "path";
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 // import { format } from 'date-fns'
 
 
@@ -108,6 +109,7 @@ const App = ({ posts }) => {
                 })}
             </div>
         </div>
+        <Footer />
     </>)
 }
 

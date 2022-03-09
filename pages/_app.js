@@ -15,6 +15,7 @@ export default function App({ Component, pageProps }) {
           title="RSS"
           href="/feed.xml"
         />
+      <title>Onurİlaslan</title>
       </Head>
       <Component {...pageProps} />
     </>
