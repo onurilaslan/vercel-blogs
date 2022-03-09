@@ -2,9 +2,11 @@ import path from "path";
 import * as fs from "fs";
 import showdown from "showdown";
 import matter from "gray-matter";
+import Header from '../components/Header'
 
 const Post = ({ content, data }) => {
   return (<>
+        <Header />
         <div className='flex'>
           <div className='w-[880px] max-w-[880px] mx-auto border-x-2 dark:border-slate-300 p-4 dark:text-slate-300 space-y-6'>
             <div className="py-4 flex items-center space-x-4">
