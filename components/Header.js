@@ -12,7 +12,7 @@ const Header = () => {
                     </div>
                     <div className="hidden sm:flex items-center space-x-10 px-4">
                         <ul className="flex space-x-6">
-                            <li className="text-md font-semibold select-none"><a href="#" className="dark:text-slate-300 p-1 px-2">Hakkımda</a></li>
+                            <li className="text-md font-semibold select-none"><a href="/hakkimda" className="dark:text-slate-300 p-1 px-2">Hakkımda</a></li>
                             <li className="text-md font-semibold select-none"><a href="/" className="dark:text-slate-300 p-1 px-2">Blog</a></li>
                         </ul>
                         <div className="dark:fill-white select-none dark:bg-slate-800/50 p-2 rounded-md">
