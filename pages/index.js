@@ -34,7 +34,7 @@ const App = ({ items }) => {
                 <div className="wrapper dark:bg-slate-900 antialiased dark:text-gray-900">
                     <img data-src={items[0].enclosure.url} className="lazy w-full object-cover object-center rounded-lg shadow-md" />
                     <div className="relative px-4 -mt-16 transition duration-150 ease-out hover:scale-110 select-none cursor-pointer">
-                        <a href={items[0].guid}>
+                        <a href={items[0].guid.split('/')[2]}>
                             <div className="dark:bg-slate-800 dark:text-slate-300 bg-white p-6 rounded-lg shadow-lg">
                                 <div className="flex items-baseline">
                                     <span className="bg-slate-200 dark:text-slate-800 text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide">
@@ -60,7 +60,7 @@ const App = ({ items }) => {
                             return (
                                 <div className="wrapper dark:bg-slate-900 antialiased dark:text-gray-900">
                                     <div className="relative px-4 transition duration-150 ease-out hover:scale-110 select-none cursor-pointer">
-                                        <a href={item.guid}>
+                                        <a href={item.guid.split('/')[2]}>
                                             <div className="dark:bg-slate-800 dark:text-slate-300 bg-white p-6 rounded-lg shadow-lg">
                                                 <div className="flex items-baseline">
                                                     <span className="bg-slate-200 dark:text-slate-800 text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide">
@@ -88,10 +88,10 @@ const App = ({ items }) => {
     <div className="max-w-[1080px] mx-auto">
         <div className="p-4 px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {items.length > 0 && items.map((item) => (
-                <div key={item.guid} className="wrapper dark:bg-slate-900 antialiased dark:text-gray-900">
+                <div key={item.guid.split('/')[2]} className="wrapper dark:bg-slate-900 antialiased dark:text-gray-900">
                     <img data-src={item.enclosure.url} className="lazy w-full object-cover object-center rounded-lg shadow-md" />
                     <div className="relative px-4 -mt-16 transition duration-150 ease-out hover:scale-110 select-none cursor-pointer">
-                        <a href={item.guid}>
+                        <a href={item.guid.split('/')[2]}>
                             <div className="dark:bg-slate-800 dark:text-slate-300 bg-white p-6 rounded-lg shadow-lg">
                                 <div className="flex items-baseline">
                                     <span className="bg-slate-200 dark:text-slate-800 text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide">

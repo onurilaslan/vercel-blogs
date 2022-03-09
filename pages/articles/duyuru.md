@@ -3,7 +3,7 @@ title: DUYURU
 date: 2021/3/19
 description: bu bir duyurudur.
 author: lenax
-media: https://i.picsum.photos/id/187/800/400.jpg?hmac=XZBF_BYpfbrMwdGSGJn4MD25rQhSWjc5ugeVJs5ezxM
+media: https://media.discordapp.net/attachments/647859250336628737/950501130692075590/wallhaven-9mkp2k.jpg?width=953&height=440
 ---
 
 # DU(YURU)
