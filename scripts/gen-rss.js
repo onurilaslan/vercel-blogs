@@ -28,9 +28,6 @@ async function generate() {
         description: frontmatter.data.description,
         author: frontmatter.data.author,
         enclosure: {'url': frontmatter.data.media},
-        custom_elements: [
-          { 'read_time': 1 },
-        ]
       })
     })
   )
