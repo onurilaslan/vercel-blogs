@@ -3,8 +3,13 @@ import * as fs from "fs";
 import showdown from "showdown";
 import matter from "gray-matter";
 import Header from '../components/Header'
+import hljs from "highlight.js";
+import {useEffect} from "react";
 
 const Post = ({ content, data }) => {
+  useEffect(() => {
+    hljs.highlightAll();
+  }, []);
   return (<>
         <Header />
         <div className='flex'>
@@ -22,7 +27,7 @@ const Post = ({ content, data }) => {
               <img data-src={data.media} className="lazy w-full object-cover object-center rounded-lg shadow-md" />
               <small><a href={data.media}>Open original</a></small>
             </div>
-            <div dangerouslySetInnerHTML={{__html: content}} />
+            <div className="prose" dangerouslySetInnerHTML={{__html: content}} />
           </div>
           <div className='hidden md:block w-[400px] max-w-[400px] mx-auto'>
           </div>

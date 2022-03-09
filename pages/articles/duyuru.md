@@ -7,3 +7,5 @@ media: https://media.discordapp.net/attachments/647859250336628737/9505011306920
 ---
 
 # DU(YURU)
+
+<script src="https://gist.github.com/llenax/84e348f11c6a76f490572e1c1e08f019.js"></script>

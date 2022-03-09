@@ -1,5 +1,9 @@
 import Head from 'next/head'
+import 'highlight.js/styles/github-dark.css';
 import '../styles/globals.css'
+import hljs from 'highlight.js';
+import javascript from 'highlight.js/lib/languages/javascript';
+hljs.registerLanguage('javascript', javascript);
 
 export default function App({ Component, pageProps }) {
   return (

@@ -44,11 +44,8 @@ Ordered
 2. Consectetur adipiscing elit
 3. Integer molestie lorem at massa
 
-## Code
 
-Inline `code`
-
-```
+```js
 export default function Nextra({ Component, pageProps }) {
   return (
     <>
