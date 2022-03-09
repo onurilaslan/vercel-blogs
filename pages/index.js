@@ -34,7 +34,7 @@ const App = ({ items }) => {
                                     {items[0].contentSnippet}
                                 </div>
                                 <div className="mt-4">
-                                    <span className="text-slate-400 text-md font-semibold">{items[0].custom_items?.read_time}</span>
+                                    <span className="text-slate-400 text-md font-semibold"></span>
                                 </div>
                             </div>
                         </a>
