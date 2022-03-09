@@ -2,6 +2,7 @@ const { promises: fs } = require('fs')
 const path = require('path')
 const RSS = require('rss')
 const matter = require('gray-matter')
+const readTimeEstimate = require('read-time-estimate');
 
 async function generate() {
   const feed = new RSS({
@@ -28,6 +29,9 @@ async function generate() {
         description: frontmatter.data.description,
         author: frontmatter.data.author,
         enclosure: {'url': frontmatter.data.media},
+        custom_elements: [
+          { 'read_time': readTimeEstimate(frontmatter.content, 275, 12, 500, ['img', 'Image']).duration },
+        ]
       })
     })
   )
