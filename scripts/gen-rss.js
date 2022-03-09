@@ -2,7 +2,6 @@ const { promises: fs } = require('fs')
 const path = require('path')
 const RSS = require('rss')
 const matter = require('gray-matter')
-const readTimeEstimate = require('./readTime')
 
 async function generate() {
   const feed = new RSS({
@@ -21,8 +20,6 @@ async function generate() {
         path.join(__dirname, '..', 'pages', 'articles', name)
       )
       const frontmatter = matter(content)
-
-      const { duration } = readTimeEstimate(frontmatter.content, 275, 12, 500, ['img', 'Image']);
 
       feed.item({
         title: frontmatter.data.title,
