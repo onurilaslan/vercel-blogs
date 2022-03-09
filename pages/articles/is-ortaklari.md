@@ -7,4 +7,6 @@ media: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vectee
 timestamp: 1
 ---
 
-# is-ortaklari
+| **İş Ortakları** | **Hakkında**                                                                                                             |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------- |
+| openduct.net      | llenax yönetiminde ki, minimal yazılım şirketi. |
